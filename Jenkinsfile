@@ -13,6 +13,7 @@ pipeline
         echo "Building..."
         sh 'ls -al'
         sh 'pwd'
+        sh ' ./src/myScript.sh'
       }
     }
     stage ('Test')
