@@ -11,8 +11,8 @@ pipeline
       steps
       {
         echo "Building..."
-        ls -al
-        pwd
+        sh 'ls -al'
+        sh 'pwd'
       }
     }
     stage ('Test')
