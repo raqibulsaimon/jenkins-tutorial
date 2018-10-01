@@ -11,6 +11,8 @@ pipeline
       steps
       {
         echo "Building..."
+        ls -al
+        pwd
       }
     }
     stage ('Test')
