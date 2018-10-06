@@ -8,7 +8,7 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
-                sh 'echo "Fail!"; exit 1'
+                sh 'echo "Success!"; exit 0'
             }
         }
     }
