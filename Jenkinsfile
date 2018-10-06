@@ -1,34 +1,10 @@
-pipeline
-{
-  agent
-  {
-    label "node1"
-  }
-  stages
-  {
-    stage('Build')
-    {
-      steps
-      {
-        echo "Building..."
-        sh 'ls -al'
-        sh 'pwd'
-        sh ' ./src/myScript.sh'
-      }
+pipeline {
+    agent { docker { image 'python:3.5.1' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'python --version'
+            }
+        }
     }
-    stage ('Test')
-    {
-      steps
-      {
-        echo "Testing"
-      }
-    }
-    stage("Deploying")
-    {
-      steps
-      {
-        echo "Deploying"
-      }
-    }
-  }
 }
