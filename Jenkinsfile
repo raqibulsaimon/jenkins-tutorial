@@ -1,12 +1,16 @@
-node {
-    stage('Build') {
-        echo 'Testing bash command'
-        sh 'echo $PATH'
-    }
-    stage('Test') {
-        echo 'Building....'
-    }
-    stage('Deploy') {
-        echo 'Deploying....'
+pipeline {
+    agent any
+    stages {
+        stage('Deploy') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+            steps {
+                sh 'echo "publishing"'
+                echo "current build: ${currentBuild.result}"
+            }
+        }
     }
 }
