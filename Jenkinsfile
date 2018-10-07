@@ -10,7 +10,7 @@ pipeline {
             steps {
                 echo "${DB_ENGINE}"
                 echo "${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Library version: ${env.JENKINS_LIB_VERSION}" 
+                echo "Library version: ${env.JENKINS_LIB_VERSION=getProperty('library.jenkins-shared-scripts.version')}" 
             }
         }
     }
