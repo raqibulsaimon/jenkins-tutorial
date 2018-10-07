@@ -1,10 +1,7 @@
 node {
     stage('Build') {
         echo 'Testing bash command'
-        sh """
-        echo $PATH
-        pwd
-        """
+        sh 'echo $PATH'
     }
     stage('Test') {
         echo 'Building....'
