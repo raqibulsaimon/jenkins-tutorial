@@ -1,16 +1,20 @@
 pipeline {
     agent any
 
-    environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
-    }
     stages {
         stage('Build') {
             steps {
-                echo "${DB_ENGINE}"
-                echo "${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo "Library version: ${env.JENKINS_LIB_VERSION=getProperty('library.jenkins-shared-scripts.version')}" 
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
