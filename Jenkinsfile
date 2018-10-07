@@ -9,7 +9,7 @@ pipeline {
             }
             steps {
                 sh 'echo "publishing"'
-                echo "current build: ${currentBuild.result}"
+                echo "current build: ${currentBuild.restttt}"
             }
         }
     }
