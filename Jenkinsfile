@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "println ${DB_ENGINE}"
+                echo "${DB_ENGINE}"
             }
         }
     }
