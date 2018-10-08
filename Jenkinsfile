@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    def username = 'Jenkins'
     stages {
         stage('Deploy') {
             when {
@@ -11,8 +10,6 @@ pipeline {
             steps {
                 sh 'echo "publishing"'
                 echo "current build: ${currentBuild.result}"
-                echo 'Hello Mr. ${username}'
-                echo "I said, Hello Mr. ${username}"
             }
         }
     }
